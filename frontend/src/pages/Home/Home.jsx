@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import { IoMdSwap } from "react-icons/io";
+import { IoArrowForwardSharp } from "react-icons/io5";
+import { IoLocationSharp } from "react-icons/io5";
+import { TbLocationFilled } from "react-icons/tb";
 
 import RootLayout from '../../layout/RootLayout';
 
@@ -33,7 +36,7 @@ function Home() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
                             >
-                                Need tickets !!
+                                Looking for tickets !!
                             </motion.p>
 
                             <motion.p
@@ -42,13 +45,13 @@ function Home() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.85, delay: 0.8, ease: "easeOut" }}
                             >
-                                Search for tickets
+                                Search Here
                             </motion.p>
                         </div>
 
                         {/* Search section */}
                         <motion.div 
-                            className='w-full bg-neutral-50/20 border-2 border-neutral-300 shadow-lg rounded-xl p-5 my-3'
+                            className='w-full bg-neutral-50/20 border-2 border-neutral-300 shadow-lg rounded-xl p-3 my-5'
                             initial={{ opacity: 0, y: -30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.95, delay: 0.9, ease: "easeOut" }}>
@@ -57,22 +60,36 @@ function Home() {
                                     <div className="w-[60%] flex items-center gap-5 relative">
                                         {/* From button */}
                                         <div className="w-1/2 h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-5 flex items-center gap-x-1 rounded-lg" >
-                                            From
+                                            <input type="text" placeholder='From' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600' />
+                                            <div className="w-5 h-5 text-neutral-600">
+                                                <IoLocationSharp size={22} />
+                                            </div>
                                         </div>
 
                                         {/* To button */}
                                         <div className="w-1/2 h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-5 flex items-center gap-x-1 rounded-lg" >
-                                            To
+                                            <input type="text" placeholder='To' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600' />
+                                            <div className="w-5 h-5 text-neutral-600">
+                                                <TbLocationFilled size={22} />
+                                            </div>
                                         </div>
 
                                         {/* Swap button */}
-                                        <button className='absolute w-11 h-6 top-1/2 left-1/2'>
+                                        <button className='absolute w-11 h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center bg-primary '>
+                                            {/* < IoArrowForwardSharp className='w-5 h-5 text-neutral-50'/> */}
                                             < IoMdSwap className='w-6 h-6 text-neutral-50'/>
                                         </button>
                                     </div>
 
-                                    {/* Date section */}
-                                    <div className="flex-1 h-14 flex items-center gap-5"></div>
+                                    {/* Date and search button */}
+                                    <div className="flex-1 h-14 flex items-center gap-5">
+                                        {/* Date */}
+                                        <div className="flex-1 h-full border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-5 flex items-center gap-x-1 rounded-lg" >
+                                            <input type="date" className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 cursor-pointer' />
+                                        </div>
+
+                                        {/* Search */}
+                                    </div>
 
                                 </div>
                         </motion.div>

@@ -15,7 +15,7 @@ function Navbar() {
             <nav className="bg-gray-200">
                 <div className="container flex justify-between items-center py-4 pl-4 md:pl-1">
                     {/* Logo */}
-                    <div className="text-2xl flex items-center gap-2 font-bold uppercase">
+                    <div className="text-2xl flex items-center gap-2 font-bold uppercase text-primary">
                         <FaBus />
                         <p>BusMe</p>
                     </div>
