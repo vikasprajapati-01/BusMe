@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { IoMdSwap } from "react-icons/io";
+import { FaSearch } from "react-icons/fa";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { IoLocationSharp } from "react-icons/io5";
 import { TbLocationFilled } from "react-icons/tb";
@@ -89,6 +90,11 @@ function Home() {
                                         </div>
 
                                         {/* Search */}
+                                        <button className="w-fit px-5 h-full hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary text-base font-medium text-neutral-50 flex items-center justify-center gap-x-2 ease-in-out duration-300">
+                                            <FaSearch />
+                                            Search
+                                        </button>
+
                                     </div>
 
                                 </div>
