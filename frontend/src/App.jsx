@@ -1,6 +1,8 @@
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/foorter/Footer";
+
 import Home from "./pages/Home/Home";
 import About from './pages/about/About'
 import FAQs from './pages/faqs/FAQs'
@@ -22,6 +24,8 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+
+          < Footer/>
         </div>
       </BrowserRouter>
     </>

@@ -20,7 +20,7 @@ function MostSearch() {
                 <MostSearchCont from={"Lucknow"} to={"Mysuru"} price={"2400"} travelTime={"18 hr"} />
                 <MostSearchCont from={"Indore"} to={"Pune"} price={"600"} travelTime={"3 hr"} />
                 <MostSearchCont from={"Delhi"} to={"Agra"} price={"300"} travelTime={"2.5 hr"} />
-                <MostSearchCont from={"Hydrabad"} to={"Jaipur"} price={"1700"} travelTime={"11 hr"} />
+                {/* <MostSearchCont from={"Hydrabad"} to={"Jaipur"} price={"1700"} travelTime={"11 hr"} /> */}
                 <MostSearchCont from={"Pune"} to={"Ayodhya"} price={"500"} travelTime={"4 hr"} />
             </div>
         </RootLayout>
