@@ -3,10 +3,23 @@ import { GiCharging } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 // import { FaBottleWater } from "react-icons/fa6";
 
+import { motion } from "framer-motion";
+
 
 const MostSearchCont = ( { from, to, travelTime, price } ) => {
+
+    const variants = {
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },   
+    }
+
     return (
-        <div className="w-full rounded-xl p-5 border-2 border-neutral-300 space-y-10">
+        <motion.div className="w-full rounded-xl p-5 border-2 border-neutral-300 space-y-10"
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={variants}
+                    transition={{ duration: 0.65, delay:0.5, ease: "easeInOut" }}>
             <div className="space-y-3.5 w-full">
                 {/* Route from and to */}
                 <div className="space-y-0">
@@ -25,7 +38,7 @@ const MostSearchCont = ( { from, to, travelTime, price } ) => {
                         {/* Travel Time */}
 
                         <div className="flex-1 border-dashed border border-neutral-400 relative">
-                            <p className="absolute w-fit px-3 h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neutral-50 rounded-full flex items-center justify-center text-sm text-neutral-500 font-normal border-dashed border border-neutral-400">
+                            <p className="absolute w-fit px-3 h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neutral-50 rounded-full flex items-center justify-center text-sm text-neutral-500 font-normal border-dashed border border-neutral-500">
                                 { travelTime }
                             </p>
                         </div>
@@ -90,7 +103,7 @@ const MostSearchCont = ( { from, to, travelTime, price } ) => {
                 </button>
             </div>
 
-        </div>
+        </motion.div>
     );
 }
 
