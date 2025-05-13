@@ -12,9 +12,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
 app.get("/", async (req: Request, res: Response) => {
-    res.json({message: "Yooooooooooooooo"});
+    res.json({message: "Test page"});
 })
 
-app.listen(1234, () => {
+app.listen(8000, () => {
     console.log("Server is 1234");
 })
