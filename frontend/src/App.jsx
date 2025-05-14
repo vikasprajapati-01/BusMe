@@ -8,6 +8,7 @@ import About from './pages/about/About'
 import FAQs from './pages/faqs/FAQs'
 import Services from './pages/services/Services'
 import Contact from './pages/contact/Contact'
+import Ticket from './pages/ticket/Ticket'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/ticket" element={<Ticket />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />

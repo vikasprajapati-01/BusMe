@@ -41,14 +41,14 @@ function Hero() {
                                 Looking for tickets !!
                             </motion.p>
 
-                            <motion.p
+                            <motion.h1
                             className='text-5xl text-gray-800 font-bold capitalize text-center'
                             initial={{ opacity: 0, y: -30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.85, delay: 0.8, ease: "easeOut" }}
                             >
                                 Search Here
-                            </motion.p>
+                            </motion.h1>
                         </div>
 
                         {/* Search section */}

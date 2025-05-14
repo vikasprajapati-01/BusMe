@@ -13,16 +13,21 @@ export const NavbarMenu = [
     },
     {
         id: 3,
+        title: "Ticket",
+        link: "/ticket"
+    },
+    {
+        id: 4,
         title: "FAQs",
         link: "/faqs"
     },
     {
-        id: 4,
+        id: 5,
         title: "Services",
         link: "/services"
     },
     {
-        id: 5,
+        id: 6,
         title: "Contact",
         link: "/contact"
     },
