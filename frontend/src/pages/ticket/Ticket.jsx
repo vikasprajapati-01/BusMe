@@ -1,5 +1,7 @@
 import TopLayout from '../../layout/topLayout/TopLayout'
 import RootLayout from '../../layout/RootLayout';
+import Filter from './filter/Filter';
+import SearchResult from './searchResult/SearchResult';
 
 import TopImage from '../../assets/HomeBus.jpg'
 
@@ -82,8 +84,13 @@ function Ticket() {
                 {/* Searched Bus Ticket */}
                 <div className='w-full h-auto grid grid-cols-4 gap-16 relative'>
                     {/* Filter */}
+                    <div className="col-span-1">
+                        <Filter className="space-y-4 sticky top-52 z-20" />
+                    </div>
 
                     {/* Search for the ticket */}
+                    <SearchResult />
+
                 </div>
             </RootLayout>
         </div>
