@@ -12,12 +12,6 @@ function SearchResult() {
                 <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
                 <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
                 <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
             </div>
 
             <div className="w-full flex items-center justify-center">

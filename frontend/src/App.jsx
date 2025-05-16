@@ -9,6 +9,7 @@ import FAQs from './pages/faqs/FAQs'
 import Services from './pages/services/Services'
 import Contact from './pages/contact/Contact'
 import Ticket from './pages/ticket/Ticket'
+import Detail from "./pages/ticket/detail/Detail";
 
 function App() {
   
@@ -22,6 +23,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/ticket" element={<Ticket />} />
+            {/* Ticket Detail */}
+            <Route path="/ticket/detail" element={<Detail />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
