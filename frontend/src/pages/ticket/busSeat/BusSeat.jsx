@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import busSeatData from "../../../constant/busSeatData/busSeatData.js"
+import busSeatData from "../../../constant/busSeatData/BusSeatData"
 
 import { GiSteeringWheel } from "react-icons/gi";
 import { LuArmchair } from "react-icons/lu";
