@@ -1,6 +1,8 @@
 import RootLayout from "../../../layout/RootLayout"
 import TopLayout from "../../../layout/topLayout/TopLayout"
 import WarningSeat from "../../../components/alertSection/WarningSeat"
+import BusSeat from "../busSeat/BusSeat"
+
 
 import { Link } from "react-router-dom"
 
@@ -10,7 +12,7 @@ function Detail() {
 
     const message = (
         <>
-            To book more than 8 seats, contact out support team
+            To book more than 8 seats, contact out support team-
             <Link to={"/support"} className="text-primary font-medium" >
                 Click here to contact
             </Link>
@@ -28,6 +30,8 @@ function Detail() {
                     <WarningSeat message={message} />
 
                     {/* Seat Layout */}
+                    <BusSeat />
+
                 </div>
 
                 {/* Bus Detail */}
