@@ -1,4 +1,4 @@
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/foorter/Footer";
@@ -15,7 +15,6 @@ function App() {
   
   return (
     <>
-      <BrowserRouter>
         <div className="overflow-x-hidden">
           <Navbar />
 
@@ -32,7 +31,6 @@ function App() {
 
           < Footer/>
         </div>
-      </BrowserRouter>
     </>
   )
 }
