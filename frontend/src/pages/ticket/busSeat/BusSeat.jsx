@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 
 import busSeatData from "../../../constant/busSeatData/BusSeatData"
 
 import { GiSteeringWheel } from "react-icons/gi";
 import { LuArmchair } from "react-icons/lu";
+import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 
 function BusSeat() {
 
@@ -151,7 +153,33 @@ function BusSeat() {
 
                     {/* Booking info */}
                     <div className="w-full flex items-center justify-center gap-6 border-t border-neutral-200 pt-5">
-                        Hey
+                        <div className="flex items-center gap-x-2">
+                            <LuArmchair className="text-xl text-neutral-500 -rotate-90" />
+                            <p className="text-sm text-neutral-500 font-medium">
+                                Available
+                            </p>
+                        </div>
+
+                        <div className="flex items-center gap-x-2">
+                            <LuArmchair className="text-xl text-primary-500 -rotate-90" />
+                            <p className="text-sm text-neutral-500 font-medium">
+                                Booked
+                            </p>
+                        </div>
+
+                        <div className="flex items-center gap-x-2">
+                            <LuArmchair className="text-xl text-green-500 -rotate-90" />
+                            <p className="text-sm text-neutral-500 font-medium">
+                                Selected
+                            </p>
+                        </div>
+
+                        <div className="flex items-center gap-x-2">
+                            <RiMoneyRupeeCircleFill className="text-xl text-neutral-500 " />
+                            <p className="text-sm text-neutral-500 font-medium">
+                                Rs. 1600
+                            </p>
+                        </div>
                     </div>
 
                 </div>
@@ -159,7 +187,30 @@ function BusSeat() {
 
             {/* Select seat */}
             <div className="col-span-2 w-full space-y-5 bg-neutral-50 rounded-xl py-4 px-6 border border-neutral-200 shadow-sm">
-                Hey
+
+                <div className="w-full space-y-2">
+                    <div className="w-full flex items-center justify-between">
+                        <h1 className="text-lg text-neutral-600 font">
+                            Your Destination
+                        </h1>
+
+                        <Link to={"/ticket"} className="text-sm text-primary font-normal" >
+                            Change Route
+                        </Link>
+                    </div>
+                </div>
+
+                <div className="w-full space-y-2">
+                    Hey
+                </div>
+
+                <div className="w-full space-y-2">
+                    Hey
+                </div>
+
+                <div className="w-full flex items-center justify-center">
+                    Hey
+                </div>
             </div>
 
             {/* Error if seats more than 8 */}
