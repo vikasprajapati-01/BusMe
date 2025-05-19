@@ -151,17 +151,17 @@ function BusSeat() {
 
                     </div>
 
-                    {/* Booking info */}
+                    {/* Booking seat info */}
                     <div className="w-full flex items-center justify-center gap-6 border-t border-neutral-200 pt-5">
                         <div className="flex items-center gap-x-2">
-                            <LuArmchair className="text-xl text-neutral-500 -rotate-90" />
+                            <LuArmchair className="text-xl text-neutral-600 -rotate-90" />
                             <p className="text-sm text-neutral-500 font-medium">
                                 Available
                             </p>
                         </div>
 
                         <div className="flex items-center gap-x-2">
-                            <LuArmchair className="text-xl text-primary-500 -rotate-90" />
+                            <LuArmchair className="text-xl text-primary -rotate-90" />
                             <p className="text-sm text-neutral-500 font-medium">
                                 Booked
                             </p>
@@ -189,6 +189,7 @@ function BusSeat() {
             <div className="col-span-2 w-full space-y-5 bg-neutral-50 rounded-xl py-4 px-6 border border-neutral-200 shadow-sm">
 
                 <div className="w-full space-y-2">
+                    {/* Destination and Change route */}
                     <div className="w-full flex items-center justify-between">
                         <h1 className="text-lg text-neutral-600 font">
                             Your Destination
@@ -198,14 +199,86 @@ function BusSeat() {
                             Change Route
                         </Link>
                     </div>
+
+                    {/* From and To  */}
+                    <div className="space-y-0.5 w-full" >
+                        <div className="w-full flex items-center justify-bewteen gap-x-5">
+                            <p className="text-sm text-neutral-400 front-normal">
+                                From 
+                                <span className="text-xs">
+                                    (Indus Park)
+                                </span>
+                            </p>
+
+                            <p className="text-sm text-neutral-400 front-normal">
+                                To 
+                                <span className="text-xs">
+                                    (Green Layout)
+                                </span>
+                            </p>
+                        </div>
+
+                        <div className="w-full flex items-center justify-bewteen gap-x-4">
+                            <h1 className="text-sm text-neutral-600 front-normal">
+                                Delhi <span className="font-medium"> (08:00 AM) </span>
+                            </h1>
+
+                            <div className="flex-1 border-dashed border border-neutral-300" />
+
+                            <h1 className="text-sm text-neutral-600 front-normal">
+                                Lucknow <span className="font-medium"> (08:00 AM) </span>
+                            </h1>    
+                        </div>
+                    </div>
                 </div>
 
                 <div className="w-full space-y-2">
-                    Hey
+                    {/* Selected seats heading */}
+                    <div className="w-full flex items-center justify-between">
+                        <h1 className="text-lg text-neutral-600 font-medium">
+                            Selected Seats
+                        </h1>
+
+                        <div className="bg-primary" />
+                        <div className="bg-primary/20 rounded-lg py-0.5 px-1.5 text-xs text-neutral-600 font-normal uppercase">
+                            Non-refundable
+                        </div>
+                    </div>
+
+                    {/* Selected seat list */}
+                    {
+                        selectedSeats.length > 0 ?
+                            <div className="w-full flex items-center gap-x-3 ">
+                                {
+                                    selectedSeats.map((seatId) => {
+                                        return (
+                                            <div key={seatId} className="w-9 h-9 bg-neutral-200/80 rounded-lg flex items-center justify-center text-base text-neutral-700 font-semibold">
+                                                {seatId}
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                            :
+                            <div className="w-full flex items-center gap-x-3 ">
+                                <p className="text-sm text-neutral-500 font-normal">No seat selected</p>
+                            </div>
+                    }
                 </div>
 
                 <div className="w-full space-y-2">
-                    Hey
+                    <h1 className="text-lg text-neutral-600 font-medium">
+                        Fair Details
+                    </h1>
+                    <div className="w-full flex items-center justify-between border-dashed border-l-[1.5px] border-neutral-400 pl-2">
+                        <h3 className="text-sm text-neutral-500 font-medium">
+                            Fair:
+                        </h3>
+
+                        <p className="text-sm text-neutral-500 font-medium">
+                            Rs. 800
+                        </p>
+                    </div>
                 </div>
 
                 <div className="w-full flex items-center justify-center">
