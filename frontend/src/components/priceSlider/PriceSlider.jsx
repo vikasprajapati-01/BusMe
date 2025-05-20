@@ -22,7 +22,7 @@ const PriceSlider = ({
     rangeColor = "#ff8901",
     valueStyle = valueCSS,
     width = "200px",
-    currencyText = "$",
+    currencyText = "₹",
 }) => {
 
     const [minVal, setMinVal] = useState(min);

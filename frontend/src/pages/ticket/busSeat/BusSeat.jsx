@@ -202,7 +202,7 @@ function BusSeat() {
 
                     {/* From and To  */}
                     <div className="space-y-0.5 w-full" >
-                        <div className="w-full flex items-center justify-bewteen gap-x-5">
+                        <div className="w-full flex items-center justify-between gap-x-5">
                             <p className="text-sm text-neutral-400 front-normal">
                                 From 
                                 <span className="text-xs">
@@ -240,6 +240,7 @@ function BusSeat() {
                         </h1>
 
                         <div className="bg-primary" />
+
                         <div className="bg-primary/20 rounded-lg py-0.5 px-1.5 text-xs text-neutral-600 font-normal uppercase">
                             Non-refundable
                         </div>
@@ -270,6 +271,7 @@ function BusSeat() {
                     <h1 className="text-lg text-neutral-600 font-medium">
                         Fair Details
                     </h1>
+
                     <div className="w-full flex items-center justify-between border-dashed border-l-[1.5px] border-neutral-400 pl-2">
                         <h3 className="text-sm text-neutral-500 font-medium">
                             Fair:
@@ -279,6 +281,31 @@ function BusSeat() {
                             Rs. 800
                         </p>
                     </div>
+
+                    <div className="flex items-center justify-between gap-x-4">
+                        <div className="flex gap-y-0.5 flex-col">
+                            <h3 className="text-base text-neutral-500 font-medium">
+                                Total Amount:
+                            </h3>
+
+                            <span className="text-xs text-neutral-500 font-normal">
+                                (Including all taxes)
+                            </span>
+                        </div>
+
+                        {/* Calculating price */}
+                        <p className="text-base text-neutral-600 font-semibold">
+                            Rs. {" "}
+                            {
+                                selectedSeats.reduce((total, seatId) => {
+                                    const seat = busSeatData.find(busSeat => busSeat.id === seatId);
+                                    return total + (seat ? seat.price : 0);
+                                }, 0)
+                            }
+                        </p>
+
+                    </div>
+
                 </div>
 
                 <div className="w-full flex items-center justify-center">
