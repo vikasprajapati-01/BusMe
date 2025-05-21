@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 
 import busSeatData from "../../../constant/busSeatData/BusSeatData"
+import ErrorMessage from "../../../components/alertSection/errorMsg/ErrorMessage";
 
 import { GiSteeringWheel } from "react-icons/gi";
 import { LuArmchair } from "react-icons/lu";
@@ -25,7 +26,7 @@ function BusSeat() {
                 return prevSelectedSeats.filter((seat) => seat !== seatId);
             }
             else {
-                if(prevSelectedSeats.length > 8) {
+                if(prevSelectedSeats.length >= 8) {
                     setShowError(true);
                     return prevSelectedSeats;
                 }
@@ -267,11 +268,13 @@ function BusSeat() {
                     }
                 </div>
 
+                {/* Amount/Fair detail section */}
                 <div className="w-full space-y-2">
                     <h1 className="text-lg text-neutral-600 font-medium">
                         Fair Details
                     </h1>
 
+                    {/* Single seat (Fair amount) Amount */}
                     <div className="w-full flex items-center justify-between border-dashed border-l-[1.5px] border-neutral-400 pl-2">
                         <h3 className="text-sm text-neutral-500 font-medium">
                             Fair:
@@ -282,6 +285,7 @@ function BusSeat() {
                         </p>
                     </div>
 
+                    {/* Total amount section */}
                     <div className="flex items-center justify-between gap-x-4">
                         <div className="flex gap-y-0.5 flex-col">
                             <h3 className="text-base text-neutral-500 font-medium">
@@ -303,17 +307,34 @@ function BusSeat() {
                                 }, 0)
                             }
                         </p>
-
                     </div>
 
                 </div>
 
                 <div className="w-full flex items-center justify-center">
-                    Hey
+                    {
+                        selectedSeats.length > 0 ?
+                            <Link to={"/ticket/checkout"} className="w-full bg-primary hover:bg-primary/80 text-sm text-neutral-50 font-normal py-2.5 flex items-center justify-center uppercase rounded-lg transition">
+                                Proceed to Checkout
+                            </Link> 
+
+                            :
+
+                            <div className="w-full space-y-0.5">
+                                <button disabled className="w-full bg-primary hover:bg-primary/80 text-sm text-neutral-50 font-normal py-2.5 flex items-center justify-center uppercase rounded-lg transition cusrsor-not-allowed">
+                                    Proceed to Checkout
+                                </button>
+                                <small className="text-xs text-neutral-600 font-normal px-1">
+                                    Select any seat to proceed to checkout
+                                </small>
+                            </div>
+                    }
                 </div>
             </div>
 
             {/* Error if seats more than 8 */}
+
+            {showError && <ErrorMessage message={"Please contact our support team to book more than 8 seats"} />}
 
         </div>
     );
