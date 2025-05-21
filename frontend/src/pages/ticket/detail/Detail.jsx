@@ -2,6 +2,10 @@ import RootLayout from "../../../layout/RootLayout"
 import TopLayout from "../../../layout/topLayout/TopLayout"
 import WarningSeat from "../../../components/alertSection/WarningSeat"
 import BusSeat from "../busSeat/BusSeat"
+import ToggleBtn from "../../../components/toggleBtn/ToggleBtn"
+import Amenities from "./Amenities"
+import Reservation from "./Reservation"
+import BusImage from "./BusImage"
 
 
 import { Link } from "react-router-dom"
@@ -47,7 +51,24 @@ function Detail() {
 
                     {/* Button to know more about the bus */}
                     <div className="w-full flex items-center justify-center gap-6 flex-col">
-                        Tog
+                        <ToggleBtn btnText={"Hide Bus Details"} btnTextHidden={"Check Bus Details"} >
+                            {/* Reservation and Amenities */}
+                            <div className="w-full space-y-10">
+                                <div className="w-full grid grid-cols-7 gap-20">
+
+                                    {/* Amenities */}
+                                    <Amenities />
+
+                                    {/* Reservation */}
+                                    <Reservation />
+
+                                </div>
+
+                                {/* Bus Images */}
+                                <BusImage />
+
+                            </div>
+                        </ToggleBtn>
                     </div>
                 </div>
 
