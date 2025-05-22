@@ -10,6 +10,7 @@ import Services from './pages/services/Services'
 import Contact from './pages/contact/Contact'
 import Ticket from './pages/ticket/Ticket'
 import Detail from "./pages/ticket/detail/Detail";
+import CheckOut from "./pages/ticket/checkOut/CheckOut";
 
 function App() {
   
@@ -26,7 +27,7 @@ function App() {
             {/* Ticket Detail */}
             <Route path="/ticket/detail" element={<Detail />} />
             {/* Ticked Checkout */}
-            <Route path="/ticket/checkout" element={<FAQs />} />
+            <Route path="/ticket/checkout" element={<CheckOut />} />
 
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/services" element={<Services />} />
