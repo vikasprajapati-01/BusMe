@@ -11,6 +11,7 @@ import Contact from './pages/contact/Contact'
 import Ticket from './pages/ticket/Ticket'
 import Detail from "./pages/ticket/detail/Detail";
 import CheckOut from "./pages/ticket/checkOut/CheckOut";
+import Bill from "./pages/ticket/bill/Bill";
 
 function App() {
   
@@ -28,6 +29,8 @@ function App() {
             <Route path="/ticket/detail" element={<Detail />} />
             {/* Ticked Checkout */}
             <Route path="/ticket/checkout" element={<CheckOut />} />
+            {/* Bill */}
+            <Route path="/ticket/payment" element={<Bill />} />
 
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/services" element={<Services />} />

@@ -1,4 +1,8 @@
 
+import { Link } from "react-router-dom";
+
+import { FaArrowRight } from "react-icons/fa6";
+
 function TicketStatus() {
   return (
     <div className="w-full col-span-3 sticky top-20 space-y-7">
@@ -60,6 +64,7 @@ function TicketStatus() {
                 </div>
             </div>
 
+            {/* Seat details section */}
             <div className="space-y-2 w-full">
                 <h1 className="text-base text-neutral-700 font-medium">
                     Your Seats
@@ -81,16 +86,39 @@ function TicketStatus() {
                 </div>
             </div>
 
+            {/* Price details section */}
             <div className="space-y-2 w-full">
                 <h1 className="text-base text-neutral-700 font-medium">
-                    Amount Details
+                    Total Amount
                 </h1>
+
+                <div className="flex items-center justify-between gap-x-4">
+                    <div className="flex gap-y-0.5 flex-col">
+                        <h3 className="text-base text-neutral-500 font-medium">
+                            Total Amount:
+                        </h3>
+
+                        <span className="text-xs text-neutral-500 font-normal">
+                            (Including all taxes)
+                        </span>
+                    </div>
+
+                    {/* Calculating price */}
+                    <p className="text-base text-neutral-600 font-semibold">
+                        Rs. 1800
+                    </p>
+                </div>
             </div>
         </div>
 
       </div>
 
-      <div className="w-full px-1.5"></div>
+      <div className="w-full px-1.5">
+        <Link to={"/ticket/payment"} className="w-full bg-primary hover:bg-primary/80 text-sm text-neutral-50 font-normal py-2.5 flex items-center justify-center uppercase rounded-lg transition">
+            Proceed to Pay
+            <FaArrowRight className="ml-2 text-base" />
+        </Link> 
+      </div>
 
     </div>
   );
