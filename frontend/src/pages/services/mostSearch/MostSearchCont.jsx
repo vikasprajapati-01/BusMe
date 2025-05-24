@@ -3,6 +3,7 @@ import { GiCharging } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 // import { FaBottleWater } from "react-icons/fa6";
 
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 
@@ -98,9 +99,9 @@ const MostSearchCont = ( { from, to, travelTime, price } ) => {
                 </h1>
 
                 {/* Button */}
-                <button className="w-fit px-5 py-1.5 hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary text-sm font-normal text-neutral-50 flex items-center justify-center gap-x-2 ease-in-out duration-300">
+                <Link to={"/ticket/detail"} className="w-fit px-5 py-1.5 hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary text-sm font-normal text-neutral-50 flex items-center justify-center gap-x-2 ease-in-out duration-300">
                     Book Seat
-                </button>
+                </Link>
             </div>
 
         </motion.div>
