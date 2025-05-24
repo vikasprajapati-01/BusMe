@@ -324,7 +324,7 @@ function BusSeat() {
                                 <button disabled className="w-full bg-primary hover:bg-primary/80 text-sm text-neutral-50 font-normal py-2.5 flex items-center justify-center uppercase rounded-lg transition cusrsor-not-allowed">
                                     Proceed to Checkout
                                 </button>
-                                <small className="text-xs text-neutral-600 font-normal px-1">
+                                <small className="text-xs text-red-600 font-medium px-1">
                                     Select any seat to proceed to checkout
                                 </small>
                             </div>
