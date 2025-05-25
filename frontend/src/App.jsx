@@ -12,6 +12,8 @@ import Ticket from './pages/ticket/Ticket'
 import Detail from "./pages/ticket/detail/Detail";
 import CheckOut from "./pages/ticket/checkOut/CheckOut";
 import Bill from "./pages/ticket/bill/Bill";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 
 function App() {
   
@@ -22,6 +24,13 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Home />} />
+
+            {/* Ticket Detail */}
+            <Route path="/login" element={<Login />} />
+
+            {/* Ticket Detail */}
+            <Route path="/register" element={<Register />} />
+
             <Route path="/about" element={<About />} />
             <Route path="/ticket" element={<Ticket />} />
 

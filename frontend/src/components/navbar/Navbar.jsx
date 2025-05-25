@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavbarMenu } from "../../dataFolder/data";
+import { Link } from "react-router-dom";
 
 import Sidebar from './Sidebar';
 
@@ -38,9 +39,9 @@ function Navbar() {
                     {/* Login */}
                     <div className="flex items-center ">
                         {/* <button className="hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary px-6 py-2 duration-200 md:block">Login</button> */}
-                        <button className="hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary px-4 py-1.5 text-sm md:px-6 md:py-2 md:text-base duration-200 ml-20 md:ml-4">
+                        <Link to={"/login"} className="hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary px-4 py-1.5 text-sm md:px-6 md:py-2 md:text-base duration-200 ml-20 md:ml-4">
                             Login
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Moblie Menu */}
