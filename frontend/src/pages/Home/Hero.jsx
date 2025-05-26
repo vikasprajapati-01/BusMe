@@ -165,7 +165,7 @@ function Hero() {
 
                         {/* Search section */}
                         <motion.div 
-                            className='w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%] bg-neutral-50/20 border-2 border-neutral-300 shadow-lg rounded-xl p-3 my-5'
+                            className='w-full bg-neutral-50/20 border-2 border-neutral-300 shadow-lg rounded-xl p-3 my-5'
                             initial={{ opacity: 0, y: -30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.95, delay: 0.9, ease: "easeOut" }}>
@@ -177,7 +177,7 @@ function Hero() {
                                             {/* From input */}
                                             <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-1 rounded-lg">
                                                 <input type="text" placeholder='From' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600' />
-                                                <div className="w-5 h-5 text-neutral-600 -mr-1 sm:mr-0">
+                                                <div className="w-5 h-5 text-neutral-600">
                                                     <IoLocationSharp size={22} />
                                                 </div>
                                             </div>
@@ -192,7 +192,7 @@ function Hero() {
                                             {/* To input */}
                                             <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-1 rounded-lg">
                                                 <input type="text" placeholder='To' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600' />
-                                                <div className="w-5 h-5 text-neutral-600 -mr-1 sm:mr-0">
+                                                <div className="w-5 h-5 text-neutral-600">
                                                     <TbLocationFilled size={22} />
                                                 </div>
                                             </div>
