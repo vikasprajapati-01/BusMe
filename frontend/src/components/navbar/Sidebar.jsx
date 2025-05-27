@@ -1,34 +1,70 @@
-import {motion, AnimatePresence} from "framer-motion";
 
+import {motion, AnimatePresence} from "framer-motion";
+import { Link } from "react-router-dom";
 import { NavbarMenu } from "../../dataFolder/data";
 
-function Sidebar({menuBar}) {
+function Sidebar({menuBar, setMenuBar}) {
     return (
-        <AnimatePresence mode="wait" >
+        <AnimatePresence mode="wait">
             {
                 menuBar && (
-                    <motion.div initial={{ opacity: 0, y: -100 }} 
-                                animate={{ opacity: 1, y: 0 }} 
-                                exit={{ opacity: 0, y: -100 }} 
-                                transition={{ duration: 0.3 }} 
-                                className="absolute top-20 left-0 w-full h-screen z-20" >
-                        <div className="text-xl font-semibold bg-primary text-white py-10 m-4 rounded-xl">
-                            <ul className="flex flex-col justify-center items-center gap-8">
-                                {
-                                    NavbarMenu.map((item) => {
-                                        return (
-                                            <li key={item.id}>
-                                                <a href={item.link} >{item.title}</a>
-                                            </li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                        </div>
-                    </ motion.div>
+                    <>
+                        {/* Backdrop/Overlay */}
+                        <motion.div 
+                            initial={{ opacity: 0 }} 
+                            animate={{ opacity: 1 }} 
+                            exit={{ opacity: 0 }} 
+                            transition={{ duration: 0.2 }}
+                            className="fixed inset-0 bg-black/30 z-40 backdrop-blur-sm"
+                            onClick={() => setMenuBar(false)}
+                        />
+                        
+                        {/* Sidebar */}
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.95, y: -20 }} 
+                            animate={{ opacity: 1, scale: 1, y: 0 }} 
+                            exit={{ opacity: 0, scale: 0.95, y: -20 }} 
+                            transition={{ duration: 0.2, ease: "easeOut" }} 
+                            className="fixed top-20 left-4 right-4 z-50"
+                        >
+                            <div className="bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden">
+                                {/* Header */}
+                                <div className="bg-gradient-to-r from-primary to-blue-600 px-4 py-3">
+                                    <h3 className="text-white font-semibold text-center">Menu</h3>
+                                </div>
+                                
+                                {/* Menu Items */}
+                                <div className="py-2">
+                                    <ul className="space-y-1">
+                                        {
+                                            NavbarMenu.map((item, index) => {
+                                                return (
+                                                    <motion.li 
+                                                        key={item.id}
+                                                        initial={{ opacity: 0, x: -20 }}
+                                                        animate={{ opacity: 1, x: 0 }}
+                                                        transition={{ delay: index * 0.05 }}
+                                                        className="px-2"
+                                                    >
+                                                        <Link 
+                                                            to={item.link} 
+                                                            className="block py-3 px-4 text-gray-700 font-medium hover:bg-primary/10 hover:text-primary rounded-xl transition-all duration-200 text-center"
+                                                            onClick={() => setMenuBar(false)}
+                                                        >
+                                                            {item.title}
+                                                        </Link>
+                                                    </motion.li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </>
                 )
             }
-        </ AnimatePresence>
+        </AnimatePresence>
     );
 }
 

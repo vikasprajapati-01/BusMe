@@ -1,3 +1,5 @@
+
+
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
@@ -22,31 +24,34 @@ function App() {
         <div className="overflow-x-hidden">
           <Navbar />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
+          {/* Main content with top padding to avoid navbar overlap */}
+          <main className="pt-16 md:pt-20">
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-            {/* Ticket Detail */}
-            <Route path="/login" element={<Login />} />
+              {/* Login */}
+              <Route path="/login" element={<Login />} />
 
-            {/* Ticket Detail */}
-            <Route path="/register" element={<Register />} />
+              {/* Register */}
+              <Route path="/register" element={<Register />} />
 
-            <Route path="/about" element={<About />} />
-            <Route path="/ticket" element={<Ticket />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/ticket" element={<Ticket />} />
 
-            {/* Ticket Detail */}
-            <Route path="/ticket/detail" element={<Detail />} />
-            {/* Ticked Checkout */}
-            <Route path="/ticket/checkout" element={<CheckOut />} />
-            {/* Bill */}
-            <Route path="/ticket/payment" element={<Bill />} />
+              {/* Ticket Detail */}
+              <Route path="/ticket/detail" element={<Detail />} />
+              {/* Ticket Checkout */}
+              <Route path="/ticket/checkout" element={<CheckOut />} />
+              {/* Bill */}
+              <Route path="/ticket/payment" element={<Bill />} />
 
-            <Route path="/faqs" element={<FAQs />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+              <Route path="/faqs" element={<FAQs />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
 
-          < Footer/>
+          <Footer/>
         </div>
     </>
   )

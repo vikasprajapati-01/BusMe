@@ -13,11 +13,11 @@ function Navbar() {
 
     return (
         <>
-            <nav className="bg-gray-200">
-                <div className="container flex justify-between items-center py-4 pl-4 md:pl-1">
+            <nav className="bg-gray-200 fixed top-0 left-0 right-0 z-50 shadow-md">
+                <div className="container flex justify-between items-center py-3 px-4 md:py-4 md:px-6">
                     {/* Logo */}
-                    <div className="text-2xl flex items-center gap-2 font-bold uppercase text-primary">
-                        <FaBus />
+                    <div className="text-xl md:text-2xl flex items-center gap-2 font-bold uppercase text-primary">
+                        <FaBus className="text-lg md:text-xl" />
                         <p>BusMe</p>
                     </div>
 
@@ -28,7 +28,7 @@ function Navbar() {
                                 NavbarMenu.map((item) => {
                                     return (
                                         <li key={item.id}>
-                                            <a href={item.link} className="inline-block py-1 px-3 hover:bg-primary hover:text-white rounded-full p-2 duration-200 font-semibold">{item.title}</a>
+                                            <Link to={item.link} className="inline-block py-1 px-3 hover:bg-primary hover:text-white rounded-full p-2 duration-200 font-semibold">{item.title}</Link>
                                         </li>
                                     )
                                 })
@@ -36,24 +36,30 @@ function Navbar() {
                         </ul>
                     </div>
 
-                    {/* Login */}
-                    <div className="flex items-center ">
-                        {/* <button className="hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary px-6 py-2 duration-200 md:block">Login</button> */}
-                        <Link to={"/login"} className="hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary px-4 py-1.5 text-sm md:px-6 md:py-2 md:text-base duration-200 ml-20 md:ml-4">
+                    {/* Right side container */}
+                    <div className="flex items-center gap-3">
+                        {/* Login */}
+                        <Link 
+                            to={"/login"} 
+                            className="hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary px-3 py-1.5 text-sm md:px-6 md:py-2 md:text-base duration-200 transition-all"
+                        >
                             Login
                         </Link>
-                    </div>
 
-                    {/* Moblie Menu */}
-                    <div className="md:hidden" onClick={() => setMenuBar(!menuBar)}>
-                        <RiMenu2Fill className="text-3xl" />
+                        {/* Mobile Menu */}
+                        <button 
+                            className="md:hidden p-2 hover:bg-gray-300 rounded-lg transition-colors duration-200" 
+                            onClick={() => setMenuBar(!menuBar)}
+                            aria-label="Toggle menu"
+                        >
+                            <RiMenu2Fill className="text-2xl text-gray-700" />
+                        </button>
                     </div>
-
                 </div>
             </nav>
 
             {/* Mobile Sidebar */}
-            <Sidebar menuBar={menuBar} />
+            <Sidebar menuBar={menuBar} setMenuBar={setMenuBar} />
         </>
     );
 }
