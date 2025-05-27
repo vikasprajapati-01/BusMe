@@ -175,11 +175,11 @@ function Hero() {
                                         {/* Location input group for mobile with reduced spacing */}
                                         <div className="w-full space-y-1 sm:space-y-0 sm:w-auto sm:flex-1 sm:flex sm:flex-row sm:items-center sm:gap-5">
                                             {/* From input */}
-                                            <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-1 rounded-lg">
-                                                <input type="text" placeholder='From' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600' />
-                                                <div className="w-5 h-5 text-neutral-600">
+                                            <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-3 rounded-lg">
+                                                <div className="w-5 h-5 text-neutral-600 sm:order-2">
                                                     <IoLocationSharp size={22} />
                                                 </div>
+                                                <input type="text" placeholder='From' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 sm:order-1' />
                                             </div>
 
                                             {/* Mobile swap button container with minimal height */}
@@ -190,11 +190,11 @@ function Hero() {
                                             </div>
 
                                             {/* To input */}
-                                            <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-1 rounded-lg">
-                                                <input type="text" placeholder='To' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600' />
-                                                <div className="w-5 h-5 text-neutral-600">
+                                            <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-3 rounded-lg">
+                                                <div className="w-5 h-5 text-neutral-600 sm:order-2">
                                                     <TbLocationFilled size={22} />
                                                 </div>
+                                                <input type="text" placeholder='To' className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 sm:order-1' />
                                             </div>
                                         </div>
 
@@ -208,7 +208,7 @@ function Hero() {
                                     <div className="w-full md:flex-1 h-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-5 mt-3 sm:mt-0">
                                         {/* Date */}
                                         <div className="w-full sm:flex-1 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-1 rounded-lg">
-                                            <input type="date" className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 cursor-pointer' />
+                                            <input type="date" className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 cursor-pointer text-neutral-700 appearance-none' />
                                         </div>
 
                                         {/* Search */}
