@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 import { FaPlus } from "react-icons/fa6";
@@ -13,12 +14,13 @@ function PaymentMethod() {
   }
 
   return (
-    <div className="w-full space-y-3">
-      <h6 className="text-sm text-neutral-600 font-medium">
+    <div className="w-full space-y-3 sm:space-y-4 lg:space-y-5">
+      <h6 className="text-xs sm:text-sm lg:text-base text-neutral-600 font-medium">
         Select Payment Method
       </h6>
 
-      <div className="w-full grid grid-cols-2 gap-10">
+      {/* Payment Cards Grid */}
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
         <PaymentCard 
             selectedPaymentMethod={selectedPaymentMethod}
             value={"debitCard"}
@@ -38,15 +40,39 @@ function PaymentMethod() {
         />
       </div>
 
-      <div className="w-full flex justify-end">
-        <div className="w-fit flex items-center justify-center gap-x-2 cursor-pointer text-base font-normal text-primary">
-          <FaPlus />
-          <p className="capitalize">
+      {/* Add New Card Button */}
+      <div className="w-full flex justify-center sm:justify-end pt-1 sm:pt-2">
+        <button className="
+          flex items-center justify-center 
+          gap-x-1.5 sm:gap-x-2 
+          cursor-pointer 
+          text-sm sm:text-base 
+          font-normal text-primary 
+          hover:text-primary/80 
+          transition-colors duration-200
+          py-2 px-3 sm:px-4
+          rounded-lg
+          hover:bg-primary/5
+          active:scale-95
+          transform transition-transform
+        ">
+          <FaPlus className="text-xs sm:text-sm" />
+          <span className="capitalize">
             Add new card
-          </p>
-        </div>
+          </span>
+        </button>
       </div>
 
+      {/* Mobile Payment Options Info */}
+      <div className="block sm:hidden pt-2 border-t border-neutral-200">
+        <div className="flex items-center justify-between text-xs text-neutral-400">
+          <span>Secure payment processing</span>
+          <div className="flex items-center gap-1">
+            <span>🔒</span>
+            <span>SSL Protected</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
