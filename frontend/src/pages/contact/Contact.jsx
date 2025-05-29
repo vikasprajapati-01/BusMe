@@ -170,7 +170,8 @@ function Contact() {
                 );
               })}
             </div>
-          </section> {/* End of Column 2 (Details & Socials) */}
+          </section> 
+          {/* End of Column 2 (Details & Socials) */}
 
         </div>
       </div>
