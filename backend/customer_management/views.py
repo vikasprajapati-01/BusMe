@@ -7,6 +7,8 @@ from customer_management.serializers import BookingSerializer
 from bus_management.models import Bus
 from rest_framework.viewsets import ModelViewSet
 import logging
+from customer_management.models import Customer
+from customer_management.serializers import CustomerSerializer
 
 logger = logging.getLogger(__name__)
 
@@ -71,3 +73,8 @@ class BookSeatsView(APIView):
         except Exception as e:
             logger.error(f"Error occurred during booking: {str(e)}")
             return Response({'error': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class CustomerViewSet(ModelViewSet):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
