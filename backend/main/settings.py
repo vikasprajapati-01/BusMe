@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # created and installed app
+    'rest_framework',
+    'authentication',
+    'bus_management',
+    'customer_management',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'main.urls'
+
+AUTH_USER_MODEL = 'authentication.CustomUser'
 
 TEMPLATES = [
     {
