@@ -175,3 +175,169 @@ function Ticket() {
 }
 
 export default Ticket
+
+
+// import { useState } from 'react';
+// import axios from 'axios'; // Import Axios for API calls
+// import TopLayout from '../../layout/topLayout/TopLayout';
+// import RootLayout from '../../layout/RootLayout';
+// import Filter from './filter/Filter';
+// import SearchResult from './searchResult/SearchResult';
+
+// import TopImage from '../../assets/HomeBus.jpg';
+
+// import { IoMdSwap } from "react-icons/io";
+// import { FaSearch } from "react-icons/fa";
+// import { IoArrowForwardSharp } from "react-icons/io5";
+// import { IoLocationSharp } from "react-icons/io5";
+// import { TbLocationFilled } from "react-icons/tb";
+// import { HiAdjustmentsHorizontal } from "react-icons/hi2";
+// import { IoClose } from "react-icons/io5";
+
+// import { motion, AnimatePresence } from 'framer-motion';
+
+// function Ticket() {
+//     const [fromLocation, setFromLocation] = useState("");
+//     const [toLocation, setToLocation] = useState("");
+//     const [date, setDate] = useState("");
+//     const [searchResults, setSearchResults] = useState([]);
+//     const [isFilterOpen, setIsFilterOpen] = useState(false);
+//     const [loading, setLoading] = useState(false);
+//     const [error, setError] = useState("");
+
+//     const toggleFilter = () => {
+//         setIsFilterOpen(!isFilterOpen);
+//     };
+
+//     const handleSearch = async () => {
+//         setLoading(true);
+//         setError("");
+//         setSearchResults([]);
+
+//         try {
+//             const response = await axios.get("http://localhost:8000/api/search-bus/", {
+//                 params: {
+//                     from: fromLocation,
+//                     to: toLocation,
+//                     date: date,
+//                 },
+//             });
+//             setSearchResults(response.data);
+//         } catch (err) {
+//             setError("Failed to fetch bus data. Please try again later.");
+//         } finally {
+//             setLoading(false);
+//         }
+//     };
+
+//     return (
+//         <div className="w-full space-y-8 sm:space-y-12 pb-12 sm:pb-16">
+//             <TopLayout img={TopImage} title={"Book Your Ticket"} />
+
+//             <RootLayout className='space-y-8 sm:space-y-12 relative'>
+//                 {/* Search Ticket */}
+//                 <div className='space-y-3 sm:space-y-5 w-full bg-neutral-20 flex py-3 sm:py-4 items-center justify-center flex-col sticky top-0 z-30'>
+//                     <motion.h1
+//                         className='text-xl sm:text-2xl lg:text-3xl text-neutral-700 py-2 sm:py-3 font-semibold text-center px-4'
+//                         initial={{ opacity: 0, y: -30 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         transition={{ duration: 1.35, delay: 0.8, ease: "easeOut" }}
+//                     >
+//                         Do you want to change the route?
+//                     </motion.h1>
+
+//                     {/* Search */}
+//                     <motion.div 
+//                         className='w-full bg-neutral-50/20 border-2 border-neutral-300 shadow-lg rounded-xl p-3 my-5'
+//                         initial={{ opacity: 0, y: -30 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         transition={{ duration: 0.95, delay: 0.9, ease: "easeOut" }}
+//                     >
+//                         <div className="w-full flex flex-col md:flex-row items-center gap-3 md:gap-5 justify-between">
+//                             {/* Location set section */}
+//                             <div className="w-full md:w-[60%] flex flex-col sm:flex-row items-center relative sm:gap-5">
+//                                 {/* From input */}
+//                                 <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-3 rounded-lg">
+//                                     <div className="w-5 h-5 text-neutral-600 sm:order-2">
+//                                         <IoLocationSharp size={22} />
+//                                     </div>
+//                                     <input 
+//                                         type="text" 
+//                                         placeholder='From' 
+//                                         className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 sm:order-1' 
+//                                         value={fromLocation}
+//                                         onChange={(e) => setFromLocation(e.target.value)}
+//                                     />
+//                                 </div>
+
+//                                 {/* Desktop swap button */}
+//                                 <button className='hidden sm:flex absolute w-11 h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full items-center justify-center bg-primary'>
+//                                     <IoMdSwap className='w-6 h-6 text-neutral-50'/>
+//                                 </button>
+
+//                                 {/* To input */}
+//                                 <div className="w-full sm:w-1/2 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-3 rounded-lg">
+//                                     <div className="w-5 h-5 text-neutral-600 sm:order-2">
+//                                         <TbLocationFilled size={22} />
+//                                     </div>
+//                                     <input 
+//                                         type="text" 
+//                                         placeholder='To' 
+//                                         className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 sm:order-1' 
+//                                         value={toLocation}
+//                                         onChange={(e) => setToLocation(e.target.value)}
+//                                     />
+//                                 </div>
+//                             </div>
+
+//                             {/* Date and search button */}
+//                             <div className="w-full md:flex-1 h-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-5 mt-3 sm:mt-0">
+//                                 {/* Date */}
+//                                 <div className="w-full sm:flex-1 h-12 sm:h-14 border border-neutral-300 bg-white text-base text-neutral-700 font-medium px-3 sm:px-5 flex items-center gap-x-1 rounded-lg">
+//                                     <input 
+//                                         type="date" 
+//                                         className='flex-1 h-full border-none bg-transparent focus:outline-none placeholder-neutral-600 cursor-pointer text-neutral-700 appearance-none' 
+//                                         value={date}
+//                                         onChange={(e) => setDate(e.target.value)}
+//                                     />
+//                                 </div>
+
+//                                 {/* Search */}
+//                                 <button 
+//                                     className="w-full sm:w-fit px-5 h-12 sm:h-14 hover:bg-primary text-primary font-semibold hover:text-white rounded-md border-2 border-primary text-base font-medium text-neutral-50 flex items-center justify-center gap-x-2 ease-in-out duration-300"
+//                                     onClick={handleSearch}
+//                                     disabled={loading}
+//                                 >
+//                                     {loading ? "Searching..." : <><FaSearch /> Search</>}
+//                                 </button>
+//                             </div>
+//                         </div>
+//                     </motion.div>
+//                 </div>
+
+//                 {/* Search Results */}
+//                 <div>
+//                     {error && <p className="text-red-600">{error}</p>}
+//                     {searchResults.length > 0 ? (
+//                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+//                             {searchResults.map((bus) => (
+//                                 <div key={bus.id} className="border p-4 rounded-lg shadow-md">
+//                                     <p><strong>From:</strong> {bus.from_location}</p>
+//                                     <p><strong>To:</strong> {bus.to_location}</p>
+//                                     <p><strong>Date:</strong> {bus.date}</p>
+//                                     <p><strong>Departure:</strong> {bus.departure_time}</p>
+//                                     <p><strong>Arrival:</strong> {bus.arrival_time}</p>
+//                                     <p><strong>Amount:</strong> ₹{bus.amount}</p>
+//                                 </div>
+//                             ))}
+//                         </div>
+//                     ) : (
+//                         !loading && <p>No buses available for the selected route and date.</p>
+//                     )}
+//                 </div>
+//             </RootLayout>
+//         </div>
+//     );
+// }
+
+// export default Ticket;

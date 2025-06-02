@@ -58,3 +58,11 @@ class SeatBookingView(APIView):
 
         serializer = BookingSerializer(booking)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+class AllBusesView(APIView):
+    permission_classes = [AllowAny]  # No authentication required to view all buses
+
+    def get(self, request):
+        buses = Bus.objects.all()  # Retrieve all buses present in the system
+        serializer = BusSerializer(buses, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

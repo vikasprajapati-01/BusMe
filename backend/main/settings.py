@@ -94,6 +94,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", 
+    "http://localhost:5173", 
     "https://bus-me.vercel.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
