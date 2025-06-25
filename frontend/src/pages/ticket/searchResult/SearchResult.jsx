@@ -9,10 +9,12 @@ function SearchResult() {
     return(
         <div className="w-full lg:col-span-3 space-y-6 sm:space-y-8 lg:space-y-10 pt-6 sm:pt-8 lg:pt-11">
             <div className="space-y-4 sm:space-y-5 lg:space-y-6">
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
-                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"800"} availableSeats={"11"} />
+                <TicketCard icon={FaBus} busName={"Eagle"} from={"Bangalore"} to={"Chennai"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"700"} availableSeats={"11"} />
+                <TicketCard icon={FaBus} busName={"Eagle"} from={"Bangalore"} to={"Goa"} arrivalTime={"07:30 PM"} departTime={"11:30 PM"} price={"1200"} availableSeats={"14"} />
+                <TicketCard icon={FaBus} busName={"Eagle"} from={"Bangalore"} to={"Mysore"} arrivalTime={"09:30 AM"} departTime={"11:00 AM"} price={"2400"} availableSeats={"09"} />
+                <TicketCard icon={FaBus} busName={"Eagle"} from={"Bangalore"} to={"Pune"} arrivalTime={"11:30 AM"} departTime={"08:30 PM"} price={"600"} availableSeats={"12"} />
+                <TicketCard icon={FaBus} busName={"Eagle"} from={"Delhi"} to={"Agra"} arrivalTime={"08:30 AM"} departTime={"12:00 PM"} price={"300"} availableSeats={"04"} />
+                <TicketCard icon={FaBus} busName={"Eagle"} from={"Pune"} to={"Ayodhya"} arrivalTime={"10:30 AM"} departTime={"01:00 PM"} price={"500"} availableSeats={"22"} />
             </div>
 
             <div className="w-full flex items-center justify-center px-4 sm:px-0">

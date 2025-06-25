@@ -71,9 +71,9 @@ function MostSearch() {
 
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <MostSearchCont from={"Bangalore"} to={"Chennai"} price={"700"} travelTime={"8 hr"} />
-                <MostSearchCont from={"Mumbai"} to={"Kolkata"} price={"1200"} travelTime={"9 hr"} />
-                <MostSearchCont from={"Lucknow"} to={"Mysuru"} price={"2400"} travelTime={"7 hr"} />
-                <MostSearchCont from={"Indore"} to={"Pune"} price={"600"} travelTime={"3 hr"} />
+                <MostSearchCont from={"Bangalore"} to={"Goa"} price={"1200"} travelTime={"9 hr"} />
+                <MostSearchCont from={"Bangalore"} to={"Mysuru"} price={"2400"} travelTime={"7 hr"} />
+                <MostSearchCont from={"Bangalore"} to={"Pune"} price={"600"} travelTime={"3 hr"} />
                 <MostSearchCont from={"Delhi"} to={"Agra"} price={"300"} travelTime={"2.5 hr"} />
                 <MostSearchCont from={"Pune"} to={"Ayodhya"} price={"500"} travelTime={"4 hr"} />
             </div>
