@@ -35,7 +35,7 @@ function Detail() {
                     <WarningSeat message={message} />
 
                     {/* Seat Layout */}
-                    <BusSeat />
+                    <BusSeat busName={"Eagle"} from={"Bangalore"} to={"Chennai"} arrivalTime={"08:30 AM"} departTime={"01:00 AM"} price={"700"} availableSeats={"11"} />
 
                 </div>
 

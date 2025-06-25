@@ -9,7 +9,7 @@ import { GiSteeringWheel } from "react-icons/gi";
 import { LuArmchair } from "react-icons/lu";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 
-function BusSeat() {
+function BusSeat({busName, from, to, arrivalTime, departTime, price, availableSeats }) {
 
     const [selectedSeats, setSelectedSeats] = useState([]);
     const [showError, setShowError] = useState(false);
@@ -185,7 +185,7 @@ function BusSeat() {
                         <div className="flex items-center gap-x-1.5 sm:gap-x-2">
                             <RiMoneyRupeeCircleFill className="text-base sm:text-lg lg:text-xl text-neutral-500 " />
                             <p className="text-xs sm:text-sm text-neutral-500 font-medium">
-                                Rs. 1600
+                                {price}
                             </p>
                         </div>
                     </div>
@@ -228,13 +228,13 @@ function BusSeat() {
 
                         <div className="w-full flex items-center justify-between gap-x-1 sm:gap-x-2 lg:gap-x-4">
                             <h1 className="text-xs sm:text-sm text-neutral-600 font-normal flex-1">
-                                Delhi <span className="font-medium block sm:inline"> (08:00 AM) </span>
+                                {from} <span className="font-medium block sm:inline"> {departTime} </span>
                             </h1>
 
                             <div className="flex-1 max-w-[60px] sm:max-w-none border-dashed border border-neutral-300" />
 
                             <h1 className="text-xs sm:text-sm text-neutral-600 font-normal flex-1 text-right">
-                                Lucknow <span className="font-medium block sm:inline"> (08:00 AM) </span>
+                                {to} <span className="font-medium block sm:inline"> {arrivalTime} </span>
                             </h1>    
                         </div>
                     </div>
@@ -289,7 +289,7 @@ function BusSeat() {
                             </h3>
 
                             <p className="text-xs sm:text-sm text-neutral-500 font-medium">
-                                Rs. 800
+                                {price}
                             </p>
                         </div>
 
